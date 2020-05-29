@@ -18,6 +18,7 @@
       <Path>Logs</Path>
       <Path>Temp</Path>
       <Path>obj</Path>
+      <Path>test build</Path>
     </explicitExcludes>
   </component>
 </project>

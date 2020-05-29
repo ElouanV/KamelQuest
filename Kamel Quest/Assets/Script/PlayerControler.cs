@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Authors : Julien and Settha
+
 public class PlayerControler : MonoBehaviour
 {
     public float moveSpeed;
-    public Animator anim;
-    public bool moving;
+    private Animator anim;
+    private bool moving;
     private Vector2 lastMove;
 
     void Start()
     {
         anim = GetComponent<Animator>();
+        lastMove.y = -1;
     }
 
     // Update is called once per frame
@@ -38,7 +41,5 @@ public class PlayerControler : MonoBehaviour
         anim.SetBool("Moving", moving);
 		anim.SetFloat("LastMoveX",lastMove.x);
 		anim.SetFloat("LastMoveY",lastMove.y);
-
-
     }
 }

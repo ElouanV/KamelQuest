@@ -1,31 +1,42 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-
+// Author : Elouan
+///<summary>
+/// The <c> Entity </c> class which class Ennemy, Player and Ally herit.
+/// Is create all entity attribute.
+///</summary>
 public class Entity : MonoBehaviour
 {
-    public readonly long[] LEVELUPXPNEEDED = {50, 125, 225, 350, 500, 700, 950, 1200, 1600};
-    public readonly int[] ATKPROGRESSION = {3, 4, 6, 8, 11, 14, 18, 22, 27};
-    public readonly int[] MAGICATKPROGRESSION = {3, 4, 6, 8, 11, 14, 18, 22, 27};
-    public readonly long[] HPMAXPROGRESSION = {75, 150, 325, 600, 800, 1100, 1500, 1900, 2500};
-    #region constructor
+    public int[] LEVELUPXPNEEDED = new int[10];
+    public int[] ATKPROGRESSION = new int[10];
+    public int[] HPMAXPROGRESSION = new int[10];
+    //liste d'effet
+    public static string[] allEffectList = new[] {"Strengthening", "Regeneration", "Weakness", "Loot", "Damage", "Poison","Heal"};
+    public List<(string,int)> effectList = new List<(string,int)>();
+ 
     // Attribut de la classe Entity
-    public long hpmax;
-    public long currenthp;
+    public int hpmax;
+    public int currenthp;
     public int atk;
     public string name;
-    protected int magicatk;
-    protected long atkcost;
-    protected long xp;
+    public int magicatk;
+    public int atkcost;
+    public int xp;
     public int lvl;
-    protected bool isalive;
+    public bool isalive;
+    public int item_id;
     
+    //Pour le battle system
+    public bool is_defence = false;
+        
     //getter et setter
-    public long Hpmax
+    public int Hpmax
     { 
         get => hpmax; 
     }
-    public long CurrentHp
+    public int CurrentHp
     {
         get => currenthp;
     }
@@ -37,7 +48,7 @@ public class Entity : MonoBehaviour
     {
         get => magicatk;
     }
-    public long Xp
+    public int Xp
     {
         get => xp;
     }
@@ -50,23 +61,24 @@ public class Entity : MonoBehaviour
     {
         get => isalive;
     }
-
-
-        
+    public int Item_Id
+    {
+        get => item_id;
+    }
     
     // Constructeur
     public Entity()
     {
-        this.xp = 0;
-        this.lvl = 1;
-        this.isalive = true;
+        xp = 0;
+        lvl = 1;
+        isalive = true;
     }
     
-    #endregion
-    
-    
-
-    public void GetHurt(long damage) // inflige damage points de dégats à l'entité
+    ///<summary>
+    /// <param Name = "damage"> corresponding to the amount of damage to dealt to this entity </param>
+    /// <remarks> health point can not be under 0 </remarks>
+    ///</summary>
+    public void GetHurt(int damage) // inflige damage points de dégats à l'entité
     {
         if (currenthp > damage)
         {
@@ -79,7 +91,12 @@ public class Entity : MonoBehaviour
         }
     }
 
-    public void GetHeal(long heal) // soigne l'entité de heal points de vie
+
+    ///<summary> Heal the entity
+    ///<param Name = "heal"> Corresponding to the amount of healthh point to heal</param>
+    ///<remarks> The health point can not be over the maximum of health point </remaks>
+    ///</summary>
+    public void GetHeal(int heal) // soigne l'entité de heal points de vie
     {
         if (currenthp + heal <= hpmax)
         {
@@ -91,37 +108,66 @@ public class Entity : MonoBehaviour
         }
     }
 
-    protected void LvlUp(long setxp) // appelé si l'entité augmente de niveau
+    ///<summary> Give xp to thhis entity
+    ///<param Name = "xp"> Corresponding to the amount of experience points to give to the entity</param>
+    ///<remarks> If xp is over the limit of a the xp needed to level up, the entity gain a level </remaks>
+    ///</summary>
+    public void GetXp(int xpearned)
     {
-        atk += ATKPROGRESSION[lvl];
-        magicatk += MAGICATKPROGRESSION[lvl];
-        hpmax += HPMAXPROGRESSION[lvl];
-        xp = setxp;
-        lvl += 1;
-    }
-
-    public void GetXp(long xpearned) // augmente l'xp de xpearned points
-    {
-        if (xp + xpearned >= LEVELUPXPNEEDED[lvl])
+        xp += xpearned;
+        while (xp > LEVELUPXPNEEDED[lvl -1]&& lvl <10)
         {
-            xp = xp + xpearned - LEVELUPXPNEEDED[lvl];
-            LvlUp(xp);
-        
-        }
-        else
-        {
-            xp += xpearned;
+            lvl +=1;
         }
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    // ajout dans la liste des effets et execute les effets dit "passif"
+
+
+    public void AddEffect((string, int) effect)
     {
-        
+        effectList.Append(effect);
+		switch(effect.Item1)
+		{
+			case "Strengthening":
+                break;
+			case "Weakness":
+                break;
+			case "Loot":
+                break;
+		}
     }
+	// retire des effets et reinitialiser les effet "passif"
+
+    public void RemoveEffect(string effect, Entity unit)
+    {
+        int i = 0;
+		bool find = false;
+
+		while (i < unit.effectList.Count && !find)
+		{
+			find = unit.effectList[i].Item1 == effect;
+			if (find) 
+			{
+				unit.effectList.Remove(effectList[i]);
+			    //switch(CrrtEffect.Item1)
+                switch (effect)
+			    {
+			    	case "Weakness":
+
+			    		break;
+			    	case "Strengthening":
+
+			    		break;
+				}  
+			}
+			i++;
+		}
+	}
+    
+    public bool Loot()
+    {
+        return true;
+    }
+    
 }

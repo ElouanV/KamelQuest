@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57d73823-522b-4451-a88e-5735fa282c99" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Script.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Script.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShowsText.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShowsText.cs" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,21 +10,34 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/FPCSupport.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/ShowsText.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PlayerControler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/ShowsBubbleText.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/ShowsBubbleText.cs.meta" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/UnitStat.cs.meta" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/PlayerControler.cs" />
-        <option value="$PROJECT_DIR$/Dialogue.cs" />
         <option value="$PROJECT_DIR$/ShowsBubbleText.cs" />
+        <option value="$PROJECT_DIR$/ShowsText1.cs" />
+        <option value="$PROJECT_DIR$/Quest1.cs" />
+        <option value="$PROJECT_DIR$/Mission1.cs" />
+        <option value="$PROJECT_DIR$/Progression.cs" />
+        <option value="$PROJECT_DIR$/QuestDesc.cs" />
+        <option value="$PROJECT_DIR$/QuestType.cs" />
+        <option value="$PROJECT_DIR$/QuestGoal.cs" />
+        <option value="$PROJECT_DIR$/Entity/Player.cs" />
+        <option value="$PROJECT_DIR$/MeetingPNG.cs" />
         <option value="$PROJECT_DIR$/ShowsText.cs" />
+        <option value="$PROJECT_DIR$/Dialogue.cs" />
+        <option value="$PROJECT_DIR$/QuestGiver.cs" />
+        <option value="$PROJECT_DIR$/Quest.cs" />
+        <option value="$PROJECT_DIR$/Inventory/Inventory_test.cs" />
+        <option value="$PROJECT_DIR$/Quest/IsPicked.cs" />
+        <option value="$PROJECT_DIR$/Quest/MeetingPNG.cs" />
+        <option value="$PROJECT_DIR$/Inventory/PickingItem.cs" />
+        <option value="$PROJECT_DIR$/Inventory/ItemSlots.cs" />
+        <option value="$PROJECT_DIR$/Dialogu/ShowsText.cs" />
+        <option value="$PROJECT_DIR$/Quest/Quest.cs" />
+        <option value="$PROJECT_DIR$/Quest/QuestGiver.cs" />
+        <option value="$PROJECT_DIR$/Dialogu/Dialogue.cs" />
+        <option value="$PROJECT_DIR$/Dialogu/ShowsBubbleText.cs" />
       </list>
     </option>
   </component>
@@ -42,9 +51,15 @@
   </component>
   <component name="ProjectId" id="1YtfLCYbdRVUG11CDXw9eKJZkhl" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -55,15 +70,15 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="ServiceViewManager">
+    <option name="viewStates">
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
       </list>
     </option>
   </component>
@@ -84,6 +99,14 @@
       <workItem from="1583791646648" duration="164000" />
       <workItem from="1583791852542" duration="6175000" />
       <workItem from="1583801703366" duration="4931000" />
+      <workItem from="1583883266517" duration="11000" />
+      <workItem from="1583883350889" duration="14000" />
+      <workItem from="1583887319563" duration="16000" />
+      <workItem from="1586893727524" duration="6420000" />
+      <workItem from="1587042099272" duration="11696000" />
+      <workItem from="1587295811896" duration="1215000" />
+      <workItem from="1587301205374" duration="476000" />
+      <workItem from="1587389546200" duration="3000" />
     </task>
     <servers />
   </component>
@@ -104,9 +127,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
